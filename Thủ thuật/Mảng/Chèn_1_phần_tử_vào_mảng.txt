@@ -1,0 +1,23 @@
+#include <iostream>
+#include <Windows.h>
+#include <typeinfo>
+using namespace std;
+
+int main(){
+   int a[10] = {1,6,2,9,10,15,22};
+   int index ;
+   int length = 7;
+   for(int i = 0;i<=length-1;i++){
+        cout<<"  "<<a[i]<<endl;
+   }
+   cout<<"Chon vi tri chen: ";
+   cin>>index;
+
+   for(int i = length;i>index;i--){
+        a[i]= a[i-1];
+   }
+   a[index] = 100;
+   for(int i = 0;i<=length;i++){
+        cout<<"  "<<a[i]<<endl;
+   }
+}
