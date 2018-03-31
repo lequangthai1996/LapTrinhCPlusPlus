@@ -3,7 +3,15 @@
 #include <typeinfo>
 #include <string>
 using namespace std;
-
+int* returnPointer(int x)
+{  
+   int *p = new int;// Cấp phát động trong vùng nhớ Heap--> tuy p là biến cục bộ, khi ra  
+   // Khỏi khối lệnh sẽ ko thể truy cập nó, nhưng nếu ta trả về địa chỉ cấp phát thì vẫn còn vì vùng nhớ đã
+  // được cấp phát và trả địa chỉ về cho con trỏ p
+   *p = x+3;// Tăng lên 3
+   cout<<"Địa chỉ cấp phát: "<<p<<endl;
+   return p;// Trả về con trỏ p--> dùng con trỏ để nhận con trỏ, con trỏ đó chứa địa chỉ vùng nhớ có giá trị(x+3);
+}
 int main()
 {
     int *p , *q;
@@ -15,4 +23,8 @@ int main()
     cout<<*q<<endl;
     cout<<x<<endl;
     cout<<sizeof(int*);
+    int *q = returnPointer(x);  
+     cout<<"giá trị của con trỏ q: "<<q<<endl;
+    cout<<"Giá trị tại địa chỉ mà q nắm giữ: "<<*q<<endl;
+    cout<<*q<<endl;
 }
