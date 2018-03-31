@@ -1,0 +1,18 @@
+﻿#include <iostream>
+#include <Windows.h>
+#include <typeinfo>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int *p , *q;
+    int x = 5;
+    p = &x;// p nhận giá trị là địa chỉ của biến x
+    q= p;// q và p cùng có gt của địa chỉ biến x
+    *p =10;// set giá trị tại địa chỉ p giữ = 10
+    cout<<*(p)<<endl;
+    cout<<*q<<endl;
+    cout<<x<<endl;
+    cout<<sizeof(int*);
+}
