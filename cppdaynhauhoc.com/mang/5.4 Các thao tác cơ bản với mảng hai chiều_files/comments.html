@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://daynhauhoc.com/embed/comments?topic_id=30086 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <script src="./mu-sJQboADabFMVZ5L8IP07n7mU.js(1).tải xuống"></script><script src="./_hwbVxRih1RvWKtMpkr3sD_Bo9c.js(1).tải xuống"></script><link href="./embed_484dfbc35d6aa55cddef75e8cfee03a340d7d480.css" media="all" rel="stylesheet" data-target="embed">
+      <link href="./embedded_theme_7_10faa5ec0c10cfa33161b040f20494a69c0229c5.css" media="all" rel="stylesheet" data-target="embedded_theme">
+    <link rel="preload" href="./break_string-cc617154cd957804f2f6a1f3bc68258c9cdca3d4b9a322bf777d145fed04790e.js.tải xuống" as="script">
+<script src="./break_string-cc617154cd957804f2f6a1f3bc68258c9cdca3d4b9a322bf777d145fed04790e.js.tải xuống"></script>
+
+      <title>Các thao tác cơ bản với mảng hai chiều - writes - Dạy Nhau Học</title>
+
+    <script>
+      (function() {
+
+        function postUp(msg) {
+          if (parent) {
+            parent.postMessage(msg, 'https://cpp.daynhauhoc.com/5/4-cac-thao-tac-co-ban-voi-mang-hai-chieu/');
+          }
+        }
+
+        function clickPostLink(e) {
+          var postId = e.target.getAttribute('data-link-to-post');
+          if (postId) {
+            var postElement = document.getElementById('post-' + postId);
+            if (postElement) {
+              var rect = postElement.getBoundingClientRect();
+              if (rect && rect.top) {
+                postUp({type: 'discourse-scroll', top: rect.top});
+                e.preventDefault();
+                return false;
+              }
+            }
+          }
+        }
+
+        window.onload = function() {
+          // Send a post message with our loaded height
+          postUp({type: 'discourse-resize', height: document['body'].offsetHeight});
+
+          var postLinks = document.querySelectorAll("a[data-link-to-post]"),
+              i;
+
+          for (i=0; i<postLinks.length; i++) {
+            postLinks[i].onclick = clickPostLink;
+          }
+
+          // Make sure all links in the iframe point to _blank
+          var cookedLinks = document.querySelectorAll('.cooked a');
+          for (i=0; i<cookedLinks.length; i++) {
+            cookedLinks[i].target = "_blank";
+          }
+
+          // Adjust all names
+          var names = document.querySelectorAll('.username a');
+          for (i=0; i<names.length; i++) {
+            var username = names[i].innerHTML;
+            if (username) {
+              names[i].innerHTML = new BreakString(username).break();
+            }
+          }
+
+        };
+
+      })();
+    </script>
+  <link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo="></head>
+  <body class="">
+    <header class="discourse">
+    <a class="button" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/2">Continue Discussion</a>
+  <span class="replies">12 replies</span>
+</header>
+
+    <article class="post" id="post-125831">
+      <a title="July 11, 2016  6:21am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/2">Jul '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/alway5dotcom" target="_blank"><img src="./33677_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/alway5dotcom" target="_blank" class="staff">alway<wbr>​5dotcom</a>
+        </h3>
+        <p><a class="mention" href="https://daynhauhoc.com/users/nguyenchiemminhvu" target="_blank">@nguyenchiemminhvu</a> Hình minh họa đầu tiên ghi rõ ra index ở xung quanh và [row,col] cụ thể cho từng ô màu đỏ luôn sẽ dễ hình dung hơn <img src="./slight_smile.png" title=":slight_smile:" class="emoji" alt=":slight_smile:"></p>
+
+      </div>
+    </article>
+    <article class="post" id="post-197750">
+      <a title="June 30, 2017  4:58pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/3">Jun '17</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/kienonline19" target="_blank"><img src="./17546_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/kienonline19" target="_blank" class="">kienonline<wbr>​19</a>
+        </h3>
+        <p>Anh <a class="mention" href="https://daynhauhoc.com/u/nguyenchiemminhvu" target="_blank">@nguyenchiemminhvu</a> sửa từ (override: ghi đè) anh nha <img src="./slight_smile(1).png" title=":slight_smile:" class="emoji" alt=":slight_smile:"><br></p>
+
+<p></p><pre><code class="lang-auto">//Overide the next row onto the previous row</code></pre>
+
+      </div>
+    </article>
+    <article class="post" id="post-205731">
+      <a title="July 25, 2017  7:12pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/4">Jul '17</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/ps.nh0xvip" target="_blank"><img src="./25911_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/ps.nh0xvip" target="_blank" class="">ps.<wbr>​nh<wbr>​0xvip</a>
+        </h3>
+        <p>Anh ơi, hình như bị nhầm chỗ này thì phải:<br><strong>for (int row = removeRow; row &lt; num_of_row - 1; row++)</strong> </p>
+
+<p>removeRow =&gt;&gt; removeRow -1</p>
+
+            <a class="post-replies button" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/4">2 replies</a>
+      </div>
+    </article>
+    <article class="post" id="post-205743">
+      <a title="July 26, 2017 12:47am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/5">Jul '17</a>
+        <a data-link-to-post="205731" class="in-reply-to" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/4">▶ ps.nh0xvip</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Dark.Hades" target="_blank"><img src="./25332_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Dark.Hades" target="_blank" class="">Dark.<wbr>​<wbr>​Hades</a>
+        </h3>
+        <p>cái này tuỳ vào tư duy bạn ạ, người viết mặc định dòng thứ nhất là 0</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-205772">
+      <a title="July 26, 2017  3:17am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/6">Jul '17</a>
+        <a data-link-to-post="205731" class="in-reply-to" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/4">▶ ps.nh0xvip</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/rogp10" target="_blank"><img src="./45.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/rogp10" target="_blank" class="">rogp<wbr>​10</a>
+        </h3>
+        <p>(okie :D) à còn "override" nữa, "overwrite" mới đúng.</p>
+
+<p>Mà nếu không cần giữ thứ tự thì cứ việc swap ra sau O(1).</p>
+
+            <a data-link-to-post="205899" class="post-replies button" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/6" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-205899">
+      <a title="July 26, 2017  9:40am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/7">Jul '17</a>
+        <a data-link-to-post="205772" class="in-reply-to" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/6">▶ rogp10</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/ps.nh0xvip" target="_blank"><img src="./25911_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/ps.nh0xvip" target="_blank" class="">ps.<wbr>​nh<wbr>​0xvip</a>
+        </h3>
+        <p>@@ mình thử copy toàn bộ code trên vào visual studio và gõ dòng cần xóa là 3 mà nó xóa dòng thứ 4, nên mình nghĩ phải -1 chỗ đó</p>
+
+            <a data-link-to-post="205910" class="post-replies button" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/7" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-205910">
+      <a title="July 26, 2017 10:02am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/8">Jul '17</a>
+        <a data-link-to-post="205899" class="in-reply-to" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/7">▶ ps.nh0xvip</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Dark.Hades" target="_blank"><img src="./25332_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Dark.Hades" target="_blank" class="">Dark.<wbr>​<wbr>​Hades</a>
+        </h3>
+        <p>Dòng thứ 3 của bạn thì phải điền là 2, vì người code tư duy dòng 0-&gt;thứ 1, ....</p>
+
+            <a data-link-to-post="205921" class="post-replies button" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/8" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-205921">
+      <a title="July 26, 2017 10:19am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/9">Jul '17</a>
+        <a data-link-to-post="205910" class="in-reply-to" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/8">▶ Dark.Hades</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/rogp10" target="_blank"><img src="./45.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/rogp10" target="_blank" class="">rogp<wbr>​10</a>
+        </h3>
+        <p>Không, đoạn đấy sai thật <img src="./smiley.png" title=":smiley:" class="emoji" alt=":smiley:"></p>
+
+            <a data-link-to-post="205922" class="post-replies button" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/9" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-205922">
+      <a title="July 26, 2017 10:19am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/10">Jul '17</a>
+        <a data-link-to-post="205921" class="in-reply-to" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/9">▶ rogp10</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Dark.Hades" target="_blank"><img src="./25332_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Dark.Hades" target="_blank" class="">Dark.<wbr>​<wbr>​Hades</a>
+        </h3>
+        <p>E đọc thấy đúng mà bác?? <img src="./anguished.png" title=":anguished:" class="emoji" alt=":anguished:"></p>
+
+            <a data-link-to-post="205989" class="post-replies button" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/10" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-205989">
+      <a title="July 26, 2017  1:29pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/11">Jul '17</a>
+        <a data-link-to-post="205922" class="in-reply-to" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/10">▶ Dark.Hades</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/rogp10" target="_blank"><img src="./45.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/rogp10" target="_blank" class="">rogp<wbr>​10</a>
+        </h3>
+        <p>Hôm qua mình cũng nghĩ như bạn <img src="./slight_smile(1).png" title=":slight_smile:" class="emoji" alt=":slight_smile:"> nhưng thứ nhất thì người ta vẫn nhập số 1 thôi. Tức là sai spec mặc dù thuật viết đúng.</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-242275">
+      <a title="January  1, 2018  9:09am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/12"> 1 Jan</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/buiducphuoc" target="_blank"><img src="./30047_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/buiducphuoc" target="_blank" class="">buiducphuoc</a>
+        </h3>
+        <p>//Tong Cac Phan Tu duong cheo<br> using namespace std;</p>
+
+<pre><code>int main()
+{
+    cout &lt;&lt; "Mang Hinh Vuong Co Kich Thuoc:  " &lt;&lt; endl;
+    int32_t m;
+    cin &gt;&gt; m;
+    int32_t arr[m][m];
+
+    //Nhap cac phan tu trong mang;
+    for(int i= 0; i&lt;m;i++ )
+    {
+        for(int t=0; t &lt;m;t++)
+        {
+            cin &gt;&gt; arr[i][t];
+        }
+    }
+
+    //Tinh tong cac phan tu nam tren duong cheo
+    int tong=0;
+    for(int n = 0; n&lt;m;n++)
+    {
+        tong += arr[n][n];
+    }
+    cout &lt;&lt; tong&lt;&lt; endl;
+    return 0;
+}</code></pre>
+
+      </div>
+    </article>
+    <article class="post" id="post-242450">
+      <a title="January  2, 2018  8:56am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/13"> 2 Jan</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/buiducphuoc" target="_blank"><img src="./30047_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/buiducphuoc" target="_blank" class="">buiducphuoc</a>
+        </h3>
+        <pre><code>//Xoa 1 hang trong mang 2 chieu
+
+#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+    cout &lt;&lt; "Mang Hinh Vuong Co Kich Thuoc:  " &lt;&lt; endl;
+    int32_t m,n;
+    cin &gt;&gt; m&gt;&gt;n;
+    int32_t arr[m][n];
+
+    //Nhap cac phan tu trong mang;
+    for(int i= 0; i&lt;m;i++ )
+    {
+        for(int t=0; t &lt;n;t++)
+        {
+            cin &gt;&gt; arr[i][t];
+        }
+    }
+    //Ban muon xoa dong bao nhieu
+    int32_t del;
+    cout &lt;&lt; "ban muon xoa dong bao nhieu" &lt;&lt; endl;
+    cin &gt;&gt; del;
+
+ for(int i=del-1; i&lt; m; i ++)
+ {
+     for (int t= 0; t&lt; n; t++)
+     {
+         arr[i][t]= arr[i+1][t];
+
+     }
+ }
+
+       for(int i= 0; i&lt;m-1;i++ )
+    {
+        for(int t=0; t &lt;n-1;t++)
+        {
+            cout &lt;&lt; arr[i][t] &lt;&lt; " ";
+        }
+        cout &lt;&lt; endl;
+    }
+
+    return 0;
+}</code></pre>
+
+      </div>
+    </article>
+
+    <footer class="clearfix">
+      <a target="_blank" href="https://daynhauhoc.com/"><img class="logo" src="./1676518e1562184254d70059153672fd4afca30c596.png" alt="1676518e1562184254d70059153672fd4afca30c596"></a>
+      <a class="button" target="_blank" href="https://daynhauhoc.com/t/cac-thao-tac-co-ban-voi-mang-hai-chieu/30086/13">Continue Discussion</a>
+    </footer>
+    <div class="clearfix"></div>
+
+
+  
+
+</body></html>

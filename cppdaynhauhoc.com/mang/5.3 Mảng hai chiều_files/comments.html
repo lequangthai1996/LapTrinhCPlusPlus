@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://daynhauhoc.com/embed/comments?topic_id=30085 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <script src="./mu-sJQboADabFMVZ5L8IP07n7mU.js(1).tải xuống"></script><script src="./_hwbVxRih1RvWKtMpkr3sD_Bo9c.js(1).tải xuống"></script><link href="./embed_484dfbc35d6aa55cddef75e8cfee03a340d7d480.css" media="all" rel="stylesheet" data-target="embed">
+      <link href="./embedded_theme_7_10faa5ec0c10cfa33161b040f20494a69c0229c5.css" media="all" rel="stylesheet" data-target="embedded_theme">
+    <link rel="preload" href="./break_string-cc617154cd957804f2f6a1f3bc68258c9cdca3d4b9a322bf777d145fed04790e.js.tải xuống" as="script">
+<script src="./break_string-cc617154cd957804f2f6a1f3bc68258c9cdca3d4b9a322bf777d145fed04790e.js.tải xuống"></script>
+
+      <title>Mảng hai chiều C/C++ - writes - Dạy Nhau Học</title>
+
+    <script>
+      (function() {
+
+        function postUp(msg) {
+          if (parent) {
+            parent.postMessage(msg, 'https://cpp.daynhauhoc.com/5/3-mang-hai-chieu/');
+          }
+        }
+
+        function clickPostLink(e) {
+          var postId = e.target.getAttribute('data-link-to-post');
+          if (postId) {
+            var postElement = document.getElementById('post-' + postId);
+            if (postElement) {
+              var rect = postElement.getBoundingClientRect();
+              if (rect && rect.top) {
+                postUp({type: 'discourse-scroll', top: rect.top});
+                e.preventDefault();
+                return false;
+              }
+            }
+          }
+        }
+
+        window.onload = function() {
+          // Send a post message with our loaded height
+          postUp({type: 'discourse-resize', height: document['body'].offsetHeight});
+
+          var postLinks = document.querySelectorAll("a[data-link-to-post]"),
+              i;
+
+          for (i=0; i<postLinks.length; i++) {
+            postLinks[i].onclick = clickPostLink;
+          }
+
+          // Make sure all links in the iframe point to _blank
+          var cookedLinks = document.querySelectorAll('.cooked a');
+          for (i=0; i<cookedLinks.length; i++) {
+            cookedLinks[i].target = "_blank";
+          }
+
+          // Adjust all names
+          var names = document.querySelectorAll('.username a');
+          for (i=0; i<names.length; i++) {
+            var username = names[i].innerHTML;
+            if (username) {
+              names[i].innerHTML = new BreakString(username).break();
+            }
+          }
+
+        };
+
+      })();
+    </script>
+  <link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo="></head>
+  <body class="">
+    <header class="discourse">
+    <a class="button" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/2">Continue Discussion</a>
+  <span class="replies">10 replies</span>
+</header>
+
+    <article class="post" id="post-131086">
+      <a title="July 29, 2016  7:26am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/2">Jul '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/ldt.dnh" target="_blank"><img src="./45.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/ldt.dnh" target="_blank" class="">ldt.<wbr>​dnh</a>
+        </h3>
+        <aside class="quote" data-post="1" data-topic="30085"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40.png" class="avatar">nguyenchiemminhvu:</div>
+<blockquote><p>int array2D[3][5]; // 5x5 elements (3 rows, 5 columns)</p></blockquote></aside>
+
+<p>ý bác là 3x5 <img src="./slight_smile.png" title=":slight_smile:" class="emoji" alt=":slight_smile:"></p>
+
+      </div>
+    </article>
+    <article class="post" id="post-144239">
+      <a title="September 13, 2016  6:42am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/3">Sep '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Let_s_Go" target="_blank"><img src="./8654_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Let_s_Go" target="_blank" class="">Let_<wbr>​s_<wbr>​<wbr>​Go</a>
+        </h3>
+        <p></p><pre><code class="lang-auto">#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+	int arr_3d[3][3];
+	int count,sum = 0,sum1 = 0 ,sum2 = 0 ;
+	for (int row = 0; row &lt; 3; row++)
+	{
+		for (int col = 0; col &lt; 3; col++)
+		{
+			cin &gt;&gt; arr_3d[row][col];
+			switch (row)
+			{
+			case 0:
+				count = arr_3d[row][col];
+				sum = sum + count;
+				break;
+			case 1:
+				count = arr_3d[row][col];
+				sum1 = sum1 + count;
+				break;
+			case 2:
+				count = arr_3d[row][col];
+				sum2 = sum2 + count;
+				break;
+			default:
+				break;
+			}
+		}
+	}
+	system("cls");
+	for (int x = 0; x &lt; 3; x++)
+	{
+		for (int y = 0; y &lt; 3; y++)
+		{
+			cout &lt;&lt; arr_3d[x][y] &lt;&lt; "  ";
+		}
+		cout &lt;&lt; endl;
+	}
+
+	cout &lt;&lt; sum &lt;&lt; endl &lt;&lt; sum1 &lt;&lt; endl &lt;&lt; sum2 &lt;&lt; endl;
+	system("pause");
+}</code></pre>
+
+<p>bài tập 1: để output ra kết quả giống như đề bài thì em đã làm như thế này và có vẻ dài dòng quá. Có ai cut-off dùm em đc k ạ. Thanks.</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-144246">
+      <a title="September 13, 2016  7:42am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/4">Sep '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Let_s_Go" target="_blank"><img src="./8654_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Let_s_Go" target="_blank" class="">Let_<wbr>​s_<wbr>​<wbr>​Go</a>
+        </h3>
+        <p></p><pre><code class="lang-auto">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;ctime&gt;
+using namespace std;
+int main()
+{
+	int arr_3d[5][10];
+	int x;
+	srand(time(NULL));
+	cout &lt;&lt; "Enter value X: ";
+	cin &gt;&gt; x;
+	bool condition = false;
+	for (int row = 0; row &lt; 5; row++)
+	{
+		for (int col = 0; col &lt; 10; col++)
+		{
+			arr_3d[row][col] = rand() % (100 - 1 + 1) + 1;
+			cout &lt;&lt; arr_3d[row][col] &lt;&lt; "  ";
+			if (x == arr_3d[row][col])
+				condition = true;
+
+		}
+		cout &lt;&lt; endl;
+	}
+	if (condition == true)
+	{
+		cout &lt;&lt; "Found X" &lt;&lt; endl;
+	}
+	else
+		cout &lt;&lt; "Not found X" &lt;&lt; endl;
+	system("pause");
+}</code></pre>
+
+<p>Và đây là bài 2 của em. Cho em xin ý kiến ạ. Thanks</p>
+
+            <a class="post-replies button" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/4">2 replies</a>
+      </div>
+    </article>
+    <article class="post" id="post-144260">
+      <a title="September 13, 2016  9:18am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/5">Sep '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tankhoa0000" target="_blank"><img src="./14907_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tankhoa0000" target="_blank" class="">tankhoa<wbr>​0000</a>
+        </h3>
+        <aside class="quote" data-post="4" data-topic="30085"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./8654_1(1).png" class="avatar">Let_s_Go:</div>
+<blockquote><p>srand(time(NULL));</p></blockquote></aside>
+
+<p>Bạn thêm dòng này để chi thế <img src="./neutral_face.png" title=":neutral_face:" class="emoji" alt=":neutral_face:"></p>
+
+            <a data-link-to-post="144262" class="post-replies button" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/5" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-144262">
+      <a title="September 13, 2016  9:32am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/6">Sep '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tcm" target="_blank"><img src="./45(1).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tcm" target="_blank" class="">tcm</a>
+        </h3>
+        <aside class="quote" data-post="5" data-topic="30085"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./14907_1(1).png" class="avatar">tankhoa0000:</div>
+<blockquote><p>Bạn thêm dòng này để chi thế <img src="./neutral_face.png" title=":neutral_face:" class="emoji" alt=":neutral_face:"></p></blockquote></aside>
+
+<p>Vì trong vòng for của bạn ấy có dùng hàm <code>rand()</code> , và để mỗi khi F5 thì nó không ra kết quả trùng với lần trước.</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-144319">
+      <a title="September 13, 2016  2:14pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/7">Sep '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tcm" target="_blank"><img src="./45(1).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tcm" target="_blank" class="">tcm</a>
+        </h3>
+        <aside class="quote" data-post="4" data-topic="30085"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./8654_1(1).png" class="avatar">Let_s_Go:</div>
+<blockquote><p>Và đây là bài 2 của em. Cho em xin ý kiến ạ. Thanks</p></blockquote></aside>
+
+<p>Mình xin bổ sung 2 chỗ sau nhé, có thể tham khảo:</p>
+
+<p>Thứ 1: Trong khi duyệt ma trận, nếu bạn đã tìm ra được phần tử trùng với x thì kết luận và <code>break</code> ra luôn, khỏi phải duyệt tiếp chi cho tốn thời gian.</p>
+
+<p>Thứ 2: Không nhất thiết phải cần biến <code>bool</code> cho lắm, trong khi duyệt ma trận, nếu gặp phần tử trùng với x thì <code>printf</code> ra luôn và <code>break</code>, không cần biến <code>bool</code> chi cho dài dòng.</p>
+
+<p>Thế nhé <img src="./slight_smile.png" title=":slight_smile:" class="emoji" alt=":slight_smile:"></p>
+
+            <a data-link-to-post="144396" class="post-replies button" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/7" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-144396">
+      <a title="September 13, 2016  7:15pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/8">Sep '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Let_s_Go" target="_blank"><img src="./8654_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Let_s_Go" target="_blank" class="">Let_<wbr>​s_<wbr>​<wbr>​Go</a>
+        </h3>
+        <aside class="quote" data-post="7" data-topic="30085"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40(1).png" class="avatar">tcm:</div>
+<blockquote><p>Thứ 2: Không nhất thiết phải cần biến bool cho lắm, trong khi duyệt ma trận, nếu gặp phần tử trùng với x thì printf ra luôn và break, không cần biến bool chi cho dài dòng.</p></blockquote></aside>
+
+<p> Nếu mà làm như bạn đã nói thì nếu chương trình không tìm thấy x thì sẽ in ra ở trong ìf statement đó luôn hay ở ngoài ạ. Cho mình xin ý kiến.</p>
+
+            <a data-link-to-post="144444" class="post-replies button" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/8" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-144444">
+      <a title="September 14, 2016  4:13am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/9">Sep '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tcm" target="_blank"><img src="./45(1).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tcm" target="_blank" class="">tcm</a>
+        </h3>
+        <aside class="quote" data-post="8" data-topic="30085"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./8654_1(1).png" class="avatar">Let_s_Go:</div>
+<blockquote><p>Nếu mà làm như bạn đã nói thì nếu chương trình không tìm thấy x thì sẽ in ra ở trong ìf statement đó luôn hay ở ngoài ạ. Cho mình xin ý kiến.</p></blockquote></aside>
+
+<p>Uhm. Cách này mình chỉ tìm x thôi, còn không tìm được thì làm như sau:<br>Vẫn như ở trên, trong khi duyệt ma trận, nếu gặp phần tử nào trùng với x thì in ra và thoát khỏi chương trình luôn (dùng lệnh <code>exit(0)</code> ) khỏi cần <code>break</code> vì bản chất, <code>break</code> chỉ thoát khỏi vòng lặp chứa nó, còn <code>exit(0)</code> là thoát khỏi chương trình.<br>Vậy là dưới vòng lặp, bạn để dòng <code>Not found</code> là được.</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-163902">
+      <a title="December 23, 2016  9:17am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/10">Dec '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/crash2one" target="_blank"><img src="./23049_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/crash2one" target="_blank" class="">crash<wbr>​2one</a>
+        </h3>
+        <p>e mới học code, cả nhà cho e hhỏi vì sao giá trị của các phần tử ko thể nhập vào đc, sau khi nhập vào nó vẫn chỉ hiện ra cái giá trị -858993460 </p>
+
+<pre><code>\#include \&lt;iostream \ 
+\#include \&lt;array \
+using namespace std;
+#define MAX_SIZE 100
+
+void Nhapmang2D(int arr[][MAX_SIZE], int &amp;r,int &amp;c)
+{
+	cout &lt;&lt; "Moi nhap gia tri cua mang 2D: " &lt;&lt; endl;
+	for (int row = 0; row &lt; r; row++)
+	{
+		for (int col = 0; col &lt; c; col++)
+		{
+			cout &lt;&lt; "arr[" &lt;&lt; row &lt;&lt; "][" &lt;&lt; col &lt;&lt; "] = ";
+			cin &gt;&gt; arr[r][c];
+		}
+	}
+}
+
+void Inmang2D(int arr[][MAX_SIZE], int r, int c)
+{
+	cout &lt;&lt; "Bang v2D vua nhap: " &lt;&lt; endl;
+	for (int row = 0; row &lt; r; row++)
+	{
+		for (int col = 0; col &lt; c; col++)
+		{
+			cout &lt;&lt; arr[row][col] &lt;&lt;" ";
+		}
+		cout &lt;&lt; endl;
+	}
+
+}
+int main()
+{
+	int arr[MAX_SIZE][MAX_SIZE];
+	int r,c;
+	do
+	{
+		cout &lt;&lt; "Nhap so luong hang: ";
+		cin &gt;&gt; r;
+		cout &lt;&lt; "Nhap so luong cot: ";
+		cin &gt;&gt; c;
+	} while ((r &lt; 0 || r&gt;100) &amp;&amp; (c &lt; 0 || c&gt;100));
+
+	Nhapmang2D(arr, r, c);
+	Inmang2D(arr, r, c);
+
+	system("pause");
+	return 0;
+}</code></pre>
+
+      </div>
+    </article>
+    <article class="post" id="post-242252">
+      <a title="January  1, 2018  7:46am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/11"> 1 Jan</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/buiducphuoc" target="_blank"><img src="./30047_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/buiducphuoc" target="_blank" class="">buiducphuoc</a>
+        </h3>
+        <h1>include </h1>
+
+<p>using namespace std;</p>
+
+<p>int main()<br>{</p>
+
+<pre><code>cout &lt;&lt; "Moi ban nhap rows and columns cua mang 2 chieu"&lt;&lt; endl;
+int m,n;
+cin &gt;&gt; n &gt;&gt; m;
+int Arr[n][m];
+for(int i=0; i&lt; n; i++)
+{
+    for(int t =0 ; t &lt; m ; t ++)
+    {
+        cin&gt;&gt; Arr[i][t];
+
+    }
+
+
+}
+  for(int i=0; i&lt; n; i++)
+{   int tong=0;
+    for(int t =0 ; t &lt; m ; t ++)
+    {
+
+        tong += Arr[i][t];
+    }
+    cout &lt;&lt; tong&lt;&lt; endl;
+
+}
+return 0;</code></pre>
+
+<p>}</p>
+
+      </div>
+    </article>
+
+    <footer class="clearfix">
+      <a target="_blank" href="https://daynhauhoc.com/"><img class="logo" src="./1676518e1562184254d70059153672fd4afca30c596.png" alt="1676518e1562184254d70059153672fd4afca30c596"></a>
+      <a class="button" target="_blank" href="https://daynhauhoc.com/t/mang-hai-chieu-c-c/30085/11">Continue Discussion</a>
+    </footer>
+    <div class="clearfix"></div>
+
+
+  
+
+</body></html>

@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://daynhauhoc.com/embed/comments?topic_id=30080 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <script src="./mu-sJQboADabFMVZ5L8IP07n7mU.js(1).tải xuống"></script><script src="./_hwbVxRih1RvWKtMpkr3sD_Bo9c.js(1).tải xuống"></script><link href="./embed_484dfbc35d6aa55cddef75e8cfee03a340d7d480.css" media="all" rel="stylesheet" data-target="embed">
+      <link href="./embedded_theme_7_10faa5ec0c10cfa33161b040f20494a69c0229c5.css" media="all" rel="stylesheet" data-target="embedded_theme">
+    <link rel="preload" href="./break_string-cc617154cd957804f2f6a1f3bc68258c9cdca3d4b9a322bf777d145fed04790e.js.tải xuống" as="script">
+<script src="./break_string-cc617154cd957804f2f6a1f3bc68258c9cdca3d4b9a322bf777d145fed04790e.js.tải xuống"></script>
+
+      <title>Mảng một chiều C/C++ - writes - Dạy Nhau Học</title>
+
+    <script>
+      (function() {
+
+        function postUp(msg) {
+          if (parent) {
+            parent.postMessage(msg, 'https://cpp.daynhauhoc.com/5/0-mang-mot-chieu/');
+          }
+        }
+
+        function clickPostLink(e) {
+          var postId = e.target.getAttribute('data-link-to-post');
+          if (postId) {
+            var postElement = document.getElementById('post-' + postId);
+            if (postElement) {
+              var rect = postElement.getBoundingClientRect();
+              if (rect && rect.top) {
+                postUp({type: 'discourse-scroll', top: rect.top});
+                e.preventDefault();
+                return false;
+              }
+            }
+          }
+        }
+
+        window.onload = function() {
+          // Send a post message with our loaded height
+          postUp({type: 'discourse-resize', height: document['body'].offsetHeight});
+
+          var postLinks = document.querySelectorAll("a[data-link-to-post]"),
+              i;
+
+          for (i=0; i<postLinks.length; i++) {
+            postLinks[i].onclick = clickPostLink;
+          }
+
+          // Make sure all links in the iframe point to _blank
+          var cookedLinks = document.querySelectorAll('.cooked a');
+          for (i=0; i<cookedLinks.length; i++) {
+            cookedLinks[i].target = "_blank";
+          }
+
+          // Adjust all names
+          var names = document.querySelectorAll('.username a');
+          for (i=0; i<names.length; i++) {
+            var username = names[i].innerHTML;
+            if (username) {
+              names[i].innerHTML = new BreakString(username).break();
+            }
+          }
+
+        };
+
+      })();
+    </script>
+  <link rel="stylesheet" href="data:text/css;charset=utf-8;base64,Y2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gewogIGRpc3BsYXk6IGJsb2NrOwogIGJhY2tncm91bmQ6ICM0NTQ4NGQ7CiAgY29sb3I6ICNmZmY7CiAgbGluZS1oZWlnaHQ6IDEuNDU7CiAgcG9zaXRpb246IGZpeGVkOwogIHotaW5kZXg6IDkwMDAwMDAwOwogIHRvcDogMDsKICBsZWZ0OiAwOwogIHJpZ2h0OiAwOwogIHBhZGRpbmc6IC41ZW0gMWVtOwogIHRleHQtYWxpZ246IGNlbnRlcjsKICAtd2Via2l0LXVzZXItc2VsZWN0OiBub25lOwogICAgIC1tb3otdXNlci1zZWxlY3Q6IG5vbmU7CiAgICAgIC1tcy11c2VyLXNlbGVjdDogbm9uZTsKICAgICAgICAgIHVzZXItc2VsZWN0OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXVtkYXRhLXZpc2liaWxpdHk9ImhpZGRlbiJdIHsKICBkaXNwbGF5OiBub25lOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1tZXNzYWdlIHsKICBkaXNwbGF5OiBibG9jazsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gYSB7CiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7CiAgY29sb3I6ICNlYmViZjQ7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6aG92ZXIsCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGE6YWN0aXZlIHsKICBjb2xvcjogI2RiZGJlYjsKfQoKY2xvdWRmbGFyZS1hcHBbYXBwLWlkPSJhLWJldHRlci1icm93c2VyIl0gY2xvdWRmbGFyZS1hcHAtY2xvc2UgewogIGRpc3BsYXk6IGJsb2NrOwogIGN1cnNvcjogcG9pbnRlcjsKICBmb250LXNpemU6IDEuNWVtOwogIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICByaWdodDogLjRlbTsKICB0b3A6IC4zNWVtOwogIGhlaWdodDogMWVtOwogIHdpZHRoOiAxZW07CiAgbGluZS1oZWlnaHQ6IDE7Cn0KCmNsb3VkZmxhcmUtYXBwW2FwcC1pZD0iYS1iZXR0ZXItYnJvd3NlciJdIGNsb3VkZmxhcmUtYXBwLWNsb3NlOmFjdGl2ZSB7CiAgLXdlYmtpdC10cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTsKICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpOwp9CgpjbG91ZGZsYXJlLWFwcFthcHAtaWQ9ImEtYmV0dGVyLWJyb3dzZXIiXSBjbG91ZGZsYXJlLWFwcC1jbG9zZTpob3ZlciB7CiAgb3BhY2l0eTogLjllbTsKICBjb2xvcjogI2ZmZjsKfQo="></head>
+  <body class="">
+    <header class="discourse">
+    <a class="button" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/2">Continue Discussion</a>
+  <span class="replies">32 replies</span>
+</header>
+
+    <article class="post" id="post-127006">
+      <a title="July 15, 2016  2:53am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/4">Jul '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Trung_Kien_Dang" target="_blank"><img src="./45.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Trung_Kien_Dang" target="_blank" class="">Trung_<wbr>​<wbr>​Kien_<wbr>​<wbr>​Dang</a>
+        </h3>
+        <p>Có cách nào để nhập vào giá trị cho 1 mảng mà mình không biết trước mảng đó sẽ chứa bao nhiêu phần tử không.<br>Vd  lúc thì nhập vào 1 2 3 lúc thì 1 2 3 4 5</p>
+
+            <a data-link-to-post="127009" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/4" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-127009">
+      <a title="July 15, 2016  3:05am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/5">Jul '16</a>
+        <a data-link-to-post="127006" class="in-reply-to" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/4">▶ Trung_Kien_Dang</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tntxtnt" target="_blank"><img src="./24408_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tntxtnt" target="_blank" class="">tntxtnt</a>
+        </h3>
+        <p>nếu mảng ko biết trước số phần tử thì xài <code>std::vector&lt;int&gt;</code> cho khỏe.</p>
+
+<p></p><pre><code class="lang-auto">std::vector&lt;int&gt; a;
+a.push_back(1); //a = [1]
+a.push_back(2); //a = [1,2]
+a.push_back(3); //a = [1,2,3]
+a[0] = 4; //a = [4,2,3], truy cập được a[0..2]
+
+// in ra mảng a
+for (size_t i = 0; i &lt; a.size(); i++)
+    std::cout &lt;&lt; a[i] &lt;&lt; " ";
+std::cout &lt;&lt; "\n";
+
+a.clear(); //a = []
+a.push_back(1); //a = [1]
+a.push_back(2); //a = [1,2]
+a.push_back(3); //a = [1,2,3]
+a.push_back(4); //a = [1,2,3,4]
+a.push_back(5); //a = [1,2,3,4,5], truy cập được a[0..4]
+
+std::vector&lt;int&gt; b(5, 0); //b = [0,0,0,0,0]
+b.resize(7, 2); //b = [0,0,0,0,0,2,2]
+b.resize(8); //b = [0,0,0,0,0,2,2,0]
+b.resize(2); //b = [0,0]
+
+std::vector&lt;int&gt; c = {1,2,3,4,5}; //c = [1,2,3,4,5]  &lt;-- C++11 trở lên mới viết như vầy được</code></pre>
+
+<p>đương nhiên là em phải học <code>new</code>/<code>delete</code> cấp phát động cho biết, còn xài thì xài vector</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-131005">
+      <a title="July 29, 2016  1:38am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/6">Jul '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/ldt.dnh" target="_blank"><img src="./45(1).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/ldt.dnh" target="_blank" class="">ldt.<wbr>​dnh</a>
+        </h3>
+        <p>mình nghĩ nên có 1 bài riêng để nói về mảng động</p>
+
+            <a data-link-to-post="135258" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/6" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-135249">
+      <a title="August 14, 2016 12:18am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/7">Aug '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Mercury" target="_blank"><img src="./14381_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Mercury" target="_blank" class="">Mercury</a>
+        </h3>
+        <aside class="quote" data-post="1" data-topic="30080"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40.png" class="avatar">nguyenchiemminhvu:</div>
+<blockquote>
+<p>int32_t i_values[100];<br>int32_t num_of_elements = sizeof(i_values) / sizeof(int32_t);</p>
+<p>for(int32_t index = 0; index &lt;= (num_of_elements - 1); index++)	{<br>	cout &lt;&lt; "Value of element " &lt;&lt; index &lt;&lt; ": ";<br>	cin &gt;&gt; i_values[index];	<br>}</p>
+</blockquote></aside>
+
+<p>anou, đoạn này em chưa hiểu, sao ở trên đầu đã ghi mảng i_value là 100 phần tử, vậy ngay sau đó mình phải đi tính toán số phần tử của nó ở ngay sau để làm gì ạ? sao ko viết luôn là index &lt;= 100</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-135258">
+      <a title="August 14, 2016 12:44am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/8">Aug '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tcm" target="_blank"><img src="./45(2).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tcm" target="_blank" class="">tcm</a>
+        </h3>
+        <aside class="quote" data-post="6" data-topic="30080" data-full="true"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40(1).png" class="avatar">ldt.dnh:</div>
+<blockquote><p>mình nghĩ nên có 1 bài riêng để nói về mảng động</p></blockquote></aside>
+
+<p>Cái đó tới bài con trỏ nói được ! Chứ đang bài Mảng 1 chiều tự nhiên nhảy sang con trỏ (mảng động) thì có mà hack não mấy thanh niên newbie à</p>
+
+            <a data-link-to-post="135466" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/8" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-135466">
+      <a title="August 14, 2016  4:26pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/9">Aug '16</a>
+        <a data-link-to-post="135258" class="in-reply-to" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/8">▶ tcm</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/ldt.dnh" target="_blank"><img src="./45(1).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/ldt.dnh" target="_blank" class="">ldt.<wbr>​dnh</a>
+        </h3>
+        <p>Mình chỉ ý kiến vậy thôi chứ có nói thêm bài vào chỗ này đâu.</p>
+
+            <a data-link-to-post="135508" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/9" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-135508">
+      <a title="August 14, 2016 11:06pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/10">Aug '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tcm" target="_blank"><img src="./45(2).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tcm" target="_blank" class="">tcm</a>
+        </h3>
+        <aside class="quote" data-post="9" data-topic="30080" data-full="true"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40(1).png" class="avatar">ldt.dnh:</div>
+<blockquote><p>Mình chỉ ý kiến vậy thôi chứ có nói thêm bài vào chỗ này đâu.</p></blockquote></aside>
+
+<p>Yên tâm đi, trước sau gì chả có</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-135791">
+      <a title="August 15, 2016 10:25am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/11">Aug '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/mrche" target="_blank"><img src="./45(3).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/mrche" target="_blank" class="">mrche</a>
+        </h3>
+        <p><strong>Giải bài tập:</strong></p>
+
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+    int mang_diem[30];
+    int diem_max = mang_diem[0];    
+    
+    
+    for (int i = 1; i &lt;= 30; i++)
+    {
+        
+        cout &lt;&lt; "Nhap vao gia tri diem SV thu " &lt;&lt; i &lt;&lt; ": " ;
+        cin &gt;&gt; mang_diem[i];
+        
+        if (diem_max &lt; mang_diem[i])
+        {
+            diem_max = mang_diem[i];
+        }
+        else 
+            {
+            diem_max = diem_max;
+          
+            }
+    }
+    cout &lt;&lt; "Diem cao nhat cua 30 sinh vien la : " &lt;&lt; diem_max &lt;&lt; " cua SV thu " ;
+    return 0;
+}</code></pre>
+
+<p>P/s: mình chỉ mới tìm được số diểm cao nhất của sinh viên, còn tương ứng với số thứ tự thì làm sao các bạn. Mong hỗ trợ.</p>
+
+            <a class="post-replies button" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/11">2 replies</a>
+      </div>
+    </article>
+    <article class="post" id="post-135900">
+      <a title="August 15, 2016  2:07pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/12">Aug '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tcm" target="_blank"><img src="./45(2).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tcm" target="_blank" class="">tcm</a>
+        </h3>
+        <aside class="quote" data-post="11" data-topic="30080"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40(2).png" class="avatar">mrche:</div>
+<blockquote><p>mình chỉ mới tìm được số diểm cao nhất của sinh viên, còn tương ứng với số thứ tự thì làm sao các bạn. Mong hỗ trợ.</p></blockquote></aside>
+
+<p>Thì tạo thêm 1 biến thứ tự, mỗi lần gán mang_diem[i] cho diem_max thì ta đồng thời gán i cho biến thứ tự đã tạo luôn</p>
+
+            <a data-link-to-post="135988" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/12" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-135988">
+      <a title="August 16, 2016  1:44am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/13">Aug '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/mrche" target="_blank"><img src="./45(3).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/mrche" target="_blank" class="">mrche</a>
+        </h3>
+        <aside class="quote" data-post="12" data-topic="30080"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40(3).png" class="avatar">tcm:</div>
+<blockquote><p>ần gán mang_diem[i] cho diem_max thì ta đồng thời gán i cho biến thứ tự đã</p></blockquote></aside>
+
+<p><a class="mention" href="https://daynhauhoc.com/users/tntxtnt" target="_blank">@tntxtnt</a> </p>
+
+<p>Mình làm thế này cũng không được, nó ra số thứ tự cuối cùng. Nhờ bạn xem giúp.</p>
+
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+    int mang_diem[30];
+    int diem_max = 0 ;
+    int sothutu;
+    
+    
+    for (int i = 0; i &lt; 30; i++)
+    {
+        
+        cout &lt;&lt; "Nhap vao gia tri diem SV thu " &lt;&lt; i &lt;&lt; ": " ;
+        cin &gt;&gt; mang_diem[i];
+        cout &lt;&lt; i &lt;&lt; endl;
+        if (diem_max &gt; mang_diem[i])
+        {
+            diem_max = diem_max;
+            sothutu = i;
+            cout &lt;&lt; sothutu &lt;&lt; endl;
+        }
+        else 
+            {
+            diem_max = mang_diem[i];
+            sothutu = i ;
+            cout &lt;&lt; sothutu &lt;&lt; endl;
+            }
+    }
+    cout &lt;&lt; "Diem cao nhat cua 30 sinh vien la : " &lt;&lt; diem_max &lt;&lt; " cua SV thu " &lt;&lt; sothutu;
+    return 0;
+}</code></pre>
+
+            <a class="post-replies button" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/13">2 replies</a>
+      </div>
+    </article>
+    <article class="post" id="post-135994">
+      <a title="August 16, 2016  1:59am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/14">Aug '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tcm" target="_blank"><img src="./45(2).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tcm" target="_blank" class="">tcm</a>
+        </h3>
+        <aside class="quote" data-post="13" data-topic="30080"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40(2).png" class="avatar">mrche:</div>
+<blockquote><p>if (diem_max &gt; mang_diem[i])<br>        {<br>            diem_max = diem_max;<br>            sothutu = i;<br>            cout &lt;&lt; sothutu &lt;&lt; endl;<br>        }</p></blockquote></aside>
+
+<p>Mình không hiểu bạn đang làm cái gì ở trong cái scope của statement if này ?</p>
+
+            <a data-link-to-post="135998" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/14" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-135998">
+      <a title="August 16, 2016  2:04am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/15">Aug '16</a>
+        <a data-link-to-post="135994" class="in-reply-to" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/14">▶ tcm</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/mrche" target="_blank"><img src="./45(3).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/mrche" target="_blank" class="">mrche</a>
+        </h3>
+        <pre><code>if (diem_max &gt; mang_diem[i])
+{
+diem_max = diem_max; // kiem tra de tim diem max
+sothutu = i; // tìm được điểm max thì gán số thứ tự để biết SV thứ mấy được điểm max
+cout &lt;&lt; sothutu &lt;&lt; endl; // cái này mình in ra để debug
+}</code></pre>
+
+<p>Mình chưa tìm được cách in ra SV thứ mấy có điểm max, tìm điểm max thì được rồi. In ra số thứ tự thì không đúng, nó luôn lấy i cuối cùng trong mảng.</p>
+
+            <a data-link-to-post="136001" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/15" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-136001">
+      <a title="August 16, 2016  2:32am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/16">Aug '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tcm" target="_blank"><img src="./45(2).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tcm" target="_blank" class="">tcm</a>
+        </h3>
+        <aside class="quote" data-post="15" data-topic="30080"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40(2).png" class="avatar">mrche:</div>
+<blockquote><p>if (diem_max &gt; mang_diem[i])</p></blockquote></aside>
+
+<p>Mình lạy bạn <br>Đảo ngược vị trí của 2 cái này trong if<br></p>
+
+<aside class="quote" data-post="15" data-topic="30080"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40(2).png" class="avatar">mrche:</div>
+<blockquote><p>diem_max = diem_max;</p></blockquote></aside>
+
+<p>Sửa lại : diem_max = mang_diem[i]<br></p>
+
+<aside class="quote" data-post="15" data-topic="30080"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40(2).png" class="avatar">mrche:</div>
+<blockquote><p>// cái này mình in ra để debug</p></blockquote></aside>
+
+<p>Bộ lúc debug không nhìn cái bảng hiện giá trị của Visual à?</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-136015">
+      <a title="August 16, 2016  3:20am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/17">Aug '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tntxtnt" target="_blank"><img src="./24408_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tntxtnt" target="_blank" class="">tntxtnt</a>
+        </h3>
+        <aside class="quote" data-post="13" data-topic="30080"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./40(2).png" class="avatar">mrche:</div>
+<blockquote><p>if (diem_max &gt; mang_diem[i])<br>        {<br>            diem_max = diem_max;<br>            sothutu = i;<br>            cout &lt;&lt; sothutu &lt;&lt; endl;<br>        }<br>        else <br>            {<br>            diem_max = mang_diem[i];<br>            sothutu = i ;<br>            cout &lt;&lt; sothutu &lt;&lt; endl;<br>            }</p></blockquote></aside>
+
+<p>cái if else này có vấn đề, dù đúng dù sai gì thì dòng lệnh <code>sothutu = i;</code> vẫn được gọi, như vậy mỗi vòng lặp <code>sothutu</code> đều được gán bằng <code>i</code>, vậy 30 vòng lặp thì <code>sothutu</code> = 29 đúng rồi (i bắt đầu từ 0)</p>
+
+<p>khi <code>diem_max &gt; mang_diem[i]</code> thì đâu cần phải làm gì đâu, xóa hết 3 dòng trong nó đi<br></p>
+
+<p></p><pre><code class="lang-auto">        if (diem_max &gt; mang_diem[i])
+        {
+            //ko phải làm gì cả
+        }
+        else 
+        {
+            diem_max = mang_diem[i];
+            sothutu = i ;
+            cout &lt;&lt; sothutu &lt;&lt; endl;
+        }</code></pre>
+
+<p>nhưng như vậy thì ko cần kiểm tra cái if kia làm gì, sửa dấu so sánh lại là<br></p>
+
+<p></p><pre><code class="lang-auto">if (diem_max &lt; mang_diem[i]) //hoặc &lt;=
+{
+    diem_max = mang_diem[i];
+    sothutu = i;    
+    //cout &lt;&lt; sothutu &lt;&lt; endl; //khỏi cần in ra
+} 
+//else ko phải làm gì cả thì khỏi cần viết vào</code></pre>
+
+            <a data-link-to-post="136026" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/17" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-136026">
+      <a title="August 16, 2016  3:48am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/18">Aug '16</a>
+        <a data-link-to-post="136015" class="in-reply-to" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/17">▶ tntxtnt</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/mrche" target="_blank"><img src="./45(3).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/mrche" target="_blank" class="">mrche</a>
+        </h3>
+        <p>tks <a class="mention" href="https://daynhauhoc.com/users/tntxtnt" target="_blank">@tntxtnt</a> nhiều, mình sửa code lại như sau cho đúng</p>
+
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+    int mang_diem[30];
+    int sothutu;
+    int diem_max = 0;
+    
+    for ( int i = 0; i &lt; 30; i++)
+    {
+        cout &lt;&lt; " Nhap diem so sinh vien thu " &lt;&lt; i &lt;&lt; ": ";
+        cin &gt;&gt; mang_diem[i] ;
+        
+        if ( diem_max &lt; mang_diem[i] )
+        {
+            diem_max = mang_diem[i];
+            sothutu = i;
+        }
+    }
+    cout &lt;&lt; "Diem so cao nhat la " &lt;&lt; diem_max &lt;&lt; " cua sinh vien co so thu tu " &lt;&lt; sothutu &lt;&lt; endl;
+    return 0;
+}</code></pre>
+
+<p>P/s: trường hợp có nhiều điểm số cao nhất bằng nhau thì muốn đưa ra nhiều kết quả phải làm sao nhỉ? <img src="./joy.png" title=":joy:" class="emoji" alt=":joy:"></p>
+
+            <a data-link-to-post="136035" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/18" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-136035">
+      <a title="August 16, 2016  4:10am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/19">Aug '16</a>
+        <a data-link-to-post="136026" class="in-reply-to" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/18">▶ mrche</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tntxtnt" target="_blank"><img src="./24408_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tntxtnt" target="_blank" class="">tntxtnt</a>
+        </h3>
+        <p>cái này khó hình dung 1 tí: do trả về nhiều kết quả nên phải xài mảng, nhưng ko biết trước là mảng bao nhiêu phần tử nên hoặc là xài mảng động, hoặc là xài mảng tĩnh với số phần tử đủ lớn. Ở đây ko cần xài mảng động vì tối đa chỉ có 30 học sinh, nên xài mảng tĩnh 30 phần tử luôn. <br></p>
+
+<p></p><pre><code class="lang-auto">int vitri_max[30];
+int vitri_max_count = 0; //cho biết có bao nhiêu học sinh có cùng điểm số cao nhất</code></pre>
+
+<p>code cần sửa/thêm vài dòng:</p>
+
+<ul><li>khi <code>diem_max == mang_diem[i]</code> thì cần thêm i vào vitri_max:</li></ul>
+
+<p></p><pre><code class="lang-auto">vitri_max[vitri_max_count] = i;
+vitri_max_count++; //mỗi lần thêm i vào thì vitri_max_count phải tăng 1</code></pre>
+
+<ul><li>khi <code>diem_max &lt; mang_diem[i]</code>,  ví dụ vitri_max đang có 3 hs 8 điểm, thì vitri_max_count = 3, bây giờ xuất hiện 1 hs 9 điểm, như vậy vitri_max chỉ còn 1 hs 9 điểm, vậy vitri_max_count phải reset lại:</li></ul>
+
+<p></p><pre><code class="lang-auto">vitri_max[0] = i; //vị trí của hs đầu tiên
+vitri_max_count = 1; //reset lại</code></pre>
+
+<p>kết quả trong vòng for là<br></p>
+
+<p></p><pre><code class="lang-auto">if (diem_max == mang_diem[i])
+{
+    vitri_max[vitri_max_count++] = i; //viết gộp 2 dòng trên lại
+}
+else if (diem_max &lt; mang_diem[i])
+{
+    diem_max = mang_diem[i];
+    vitri_max[0] = i; //vị trí của hs đầu tiên
+    vitri_max_count = 1; //reset lại
+    //ko cần sothutu nữa
+}</code></pre>
+
+<p>khi xuất ra kết quả thì duyệt 1 vòng for để in ra số thứ tự của các sinh viên có điểm cao nhất nữa là được<br></p>
+
+<p></p><pre><code class="lang-auto">for (int i = 0; i &lt; vitri_max_count; i++)
+    //in ra vitri_max[i];</code></pre>
+
+            <a data-link-to-post="207770" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/19" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-139696">
+      <a title="August 27, 2016  7:01am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/20">Aug '16</a>
+        <a data-link-to-post="135791" class="in-reply-to" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/11">▶ mrche</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Tien_Ability_Ete" target="_blank"><img src="./17946_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Tien_Ability_Ete" target="_blank" class="">Tien_<wbr>​<wbr>​Ability_<wbr>​<wbr>​Ete</a>
+        </h3>
+        <p>Mình có thêm 2 3 dòng lệnh trong bài của bạn , bạn xem được không. Có hiện số điểm cao nhất của người thứ bao nhiêu đấy <img src="./smiley.png" title=":smiley:" class="emoji" alt=":smiley:"> <br></p>
+
+<p></p><pre><code class="lang-auto">#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+	int mang_diem[10];
+	int diem_max = mang_diem[0];
+	int thutu = 1;
+
+	for (int i = 0; i &lt;= 9; i++)
+	{
+		
+		cout &lt;&lt; "Nhap vao gia tri diem SV thu " &lt;&lt; i+1 &lt;&lt; ": ";
+		cin &gt;&gt; mang_diem[i];
+
+		if (diem_max &lt; mang_diem[i])
+		{
+			diem_max = mang_diem[i];
+			thutu++;
+		}
+		else
+		{
+			diem_max = diem_max;
+
+		}
+	}
+	cout &lt;&lt; "Diem cao nhat cua 30 sinh vien la : " &lt;&lt; diem_max &lt;&lt; " cua SV thu "&lt;&lt;thutu &lt;&lt; endl;
+
+	system("pause");
+	return 0;
+}</code></pre>
+
+      </div>
+    </article>
+    <article class="post" id="post-148136">
+      <a title="September 29, 2016  4:01pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/21">Sep '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Lee_Haan" target="_blank"><img src="./45(4).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Lee_Haan" target="_blank" class="">Lee_<wbr>​<wbr>​Haan</a>
+        </h3>
+        <p>chỉ giáo e với<br></p>
+
+<p></p><pre><code class="lang-auto">nt diem[30],i,n,diem_max=0;
+	cout&lt;&lt;"entering of value for number student of class: ";cin&gt;&gt;n;
+	cout&lt;&lt;"entering of socres student"&lt;&lt;endl;
+	for(i=0;i&lt;n;i++)
+	{
+		cin&gt;&gt;diem[i];
+		if(diem_max&lt;diem[i])
+			diem_max=diem[i];
+	}
+	cout&lt;&lt;"diem_max = "&lt;&lt;diem_max&lt;&lt;endl;
+	cout&lt;&lt;"thu tu : "&lt;&lt;i++&lt;&lt;endl;
+	system("pause");</code></pre>
+
+      </div>
+    </article>
+    <article class="post" id="post-150900">
+      <a title="October 13, 2016  4:28am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/22">Oct '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Nguyen_Nhat_Thanh" target="_blank"><img src="./17252_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Nguyen_Nhat_Thanh" target="_blank" class="">Nguyen_<wbr>​<wbr>​Nhat_<wbr>​<wbr>​Thanh</a>
+        </h3>
+        <p>Cho em hỏi về biến toàn cục và cục bộ áp dụng cho bài tính tổng các chữ số của 1 số với ạ! p/án 2 ko chạy được.<br>1. <br></p>
+
+<p></p><pre><code class="lang-auto">**int s1;**
+
+int main() {
+ int s[255],n;
+	cout&lt;&lt;"nhap vao so chu so n: "; cin&gt;&gt;n;
+	for (int i = 1;i &lt;= n; i++) {
+	cout&lt;&lt;"nhap vao phan tu thu "&lt;&lt;i&lt;&lt;":";
+	cin&gt;&gt;s[i];
+	 s1 += s[i];
+	}
+	cout&lt;&lt;"tong cac chu so= "&lt;&lt; s1 &lt;&lt; endl;
+	system("pause");
+}</code></pre>
+
+<p>2.<br></p>
+
+<p></p><pre><code class="lang-auto">int main() {
+**int s1;**
+ int s[255],n;
+	cout&lt;&lt;"nhap vao so chu so n: "; cin&gt;&gt;n;
+	for (int i = 1;i &lt;= n; i++) {
+	cout&lt;&lt;"nhap vao phan tu thu "&lt;&lt;i&lt;&lt;":";
+	cin&gt;&gt;s[i];
+	 s1 += s[i];
+	}
+	cout&lt;&lt;"tong cac chu so= "&lt;&lt; s1 &lt;&lt; endl;
+	system("pause");
+}</code></pre>
+
+            <a data-link-to-post="150909" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/22" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-150909">
+      <a title="October 13, 2016  4:55am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/23">Oct '16</a>
+        <a data-link-to-post="150900" class="in-reply-to" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/22">▶ Nguyen_Nhat_Thanh</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/nxphuc" target="_blank"><img src="./16298_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/nxphuc" target="_blank" class="">nxphuc</a>
+        </h3>
+        <p>biến toàn cục (global variable) trong C/C++ mặc định sẽ được khởi tạo giá trị 0, vì vậy cách thứ nhất sẽ chạy bình thường<br>biến cục bộ (local variable) thì không được khởi tạo giá trị trước, nó chứa giá trị rác -&gt; cách thứ hai sẽ chạy sai, hoặc một số compiler như VSC++ sẽ chặn và  báo lỗi biến dùng mà chưa được khởi tạo luôn. Cách sửa là gán nó = 0 trước.</p>
+
+            <a data-link-to-post="151098" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/23" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-151098">
+      <a title="October 14, 2016  4:04am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/24">Oct '16</a>
+        <a data-link-to-post="150909" class="in-reply-to" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/23">▶ nxphuc</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Nguyen_Nhat_Thanh" target="_blank"><img src="./17252_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Nguyen_Nhat_Thanh" target="_blank" class="">Nguyen_<wbr>​<wbr>​Nhat_<wbr>​<wbr>​Thanh</a>
+        </h3>
+        <p>À mình thấy rồi, lỗi là do nhận giá trị rác chứ ko phải lỗi local variable. thank!</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-151511">
+      <a title="October 15, 2016  2:56pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/25">Oct '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Nguyen_Nhat_Thanh" target="_blank"><img src="./17252_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Nguyen_Nhat_Thanh" target="_blank" class="">Nguyen_<wbr>​<wbr>​Nhat_<wbr>​<wbr>​Thanh</a>
+        </h3>
+        <p>Mình thấy thế này có vẻ ổn.</p>
+
+<h1>include</h1>
+
+<p>using namespace std;</p>
+
+<p>int main() {<br>    int sv[30],max;<br>	int dem=1;<br>	for (int i = 0; i &lt; 30; i++) {<br>	cout&lt;&lt;"nhap vao diem sinh vien thu "&lt;&lt;i+1&lt;&lt;endl;<br>	cin&gt;&gt;sv[i];<br>	}<br>	max=sv[0];<br>	for (int i=0;i&lt;30;i++){<br>	if (sv[i] &gt; max) {<br>		max=sv[i];<br>		dem=i;<br>	}<br>	else {<br>	max=sv[0];<br>		dem=1;<br>	}<br>	}<br>	cout&lt;&lt;"diem sinh vien cao nhat la: "&lt;&lt;max&lt;&lt;"cua sinh vien thu: "&lt;&lt;dem+1&lt;&lt;endl;<br>	system("pause");<br>	}</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-155461">
+      <a title="November  3, 2016  9:23am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/26">Nov '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Nguyen_Hoi" target="_blank"><img src="./17102_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Nguyen_Hoi" target="_blank" class="">Nguyen_<wbr>​<wbr>​Hoi</a>
+        </h3>
+        <pre><code>#include &lt;iostream&gt;
+#define n 30
+
+int main()
+{
+	int a[n];
+	for (int i = 0; i &lt; n; i++)
+	{
+		std::cout &lt;&lt; "a[" &lt;&lt; i &lt;&lt; "] = "; std::cin &gt;&gt; a[i];
+	}
+	for (int i = 0; i &lt; n; i++)
+	{
+		std::cout &lt;&lt; "a[" &lt;&lt; i &lt;&lt; "] = " &lt;&lt; a[i] &lt;&lt; std::endl;
+	}
+	int max = 0;
+	for (int i = 0; i &lt; n; i++)
+	{
+		if (a[i]&gt;a[max]) max = i;
+	}
+	std::cout &lt;&lt; "Sinh vien co diem cao nhat co stt : " &lt;&lt; max &lt;&lt; std::endl;
+	return 0;
+}</code></pre>
+
+<p>góp ý mình với mn, cảm ơn</p>
+
+            <a data-link-to-post="157045" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/26" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-157035">
+      <a title="November 11, 2016  4:21pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/27">Nov '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/vanhoaiuh" target="_blank"><img src="./45(5).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/vanhoaiuh" target="_blank" class="">vanhoaiuh</a>
+        </h3>
+        <p>bài tập mảng 1 chiều .<br></p>
+
+<p></p><pre><code class="lang-auto">/*Với yêu cầu đặt ra ban đầu,
+giảng viên cần biết điểm số cao nhất của 30 sinh viên trong lớp,
+đồng thời muốn biết điểm cao nhất là của sinh viên có số thứ tự bao nhiêu.
+Bạn hãy sử dụng mảng 1 chiều để giải quyết vấn đề này. 
+(Điểm của sinh viên được nhập từ bàn phím)*/
+#include &lt;iostream&gt;
+
+int main()
+{
+	int i_diemhocsinh[5]; 
+	int max;
+	int so_sinhvien = sizeof(i_diemhocsinh) / sizeof(int);
+	for (int i = 0; i &lt;= (so_sinhvien - 1); i++)
+	{
+		std::cout &lt;&lt; " nhap gia tri phan tu mang thu " &lt;&lt; i &lt;&lt; std::endl;
+		std::cin &gt;&gt; i_diemhocsinh[i];
+	}
+	max = i_diemhocsinh[0];
+	/*gia tri lon nhat cua mang*/
+	for (int i = 0; i &lt;= (so_sinhvien - 1); i++)
+	{
+		if (max &lt; i_diemhocsinh[i])
+		{
+			max = i_diemhocsinh[i];
+		}
+	}
+	std::cout &lt;&lt;" gia tri lon nha cua mang la " &lt;&lt; max &lt;&lt; std::endl;
+	/*so thu tu max cao nhat trong mang*/
+	for (int i = 0; i &lt;= (so_sinhvien - 1); i++)
+	{
+		if (i_diemhocsinh[i]== max)
+			std::cout &lt;&lt; " vi tri thu " &lt;&lt; i;
+	}
+
+	return 0;
+}</code></pre>
+
+      </div>
+    </article>
+    <article class="post" id="post-157045">
+      <a title="November 11, 2016 10:53pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/28">Nov '16</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/tcm" target="_blank"><img src="./45(2).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/tcm" target="_blank" class="">tcm</a>
+        </h3>
+        <aside class="quote" data-post="26" data-topic="30080"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./17102_1(1).png" class="avatar">Nguyen_Hoi:</div>
+<blockquote><p>góp ý mình với mn, cảm ơn</p></blockquote></aside>
+
+<p>Gộp lại thành 1 vòng lặp được rồi, cần gì phải 3 vòng lặp chạy lâu.</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-178206">
+      <a title="March 24, 2017  3:08am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/29">Mar '17</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/RuaSmile" target="_blank"><img src="./21134_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/RuaSmile" target="_blank" class="">Rua<wbr>​Smile</a>
+        </h3>
+        <p>bài tập mảng 1 chiều <img src="./smiley.png" title=":smiley:" class="emoji" alt=":smiley:"></p>
+
+<h1>include </h1>
+
+<p>using namespace std;<br>int main()<br>{<br>	int diem[10];<br>	int diemmax=0;<br>	int x, y;<br>	for (x = 0; x &lt;= 9; x++)<br>	{<br>		do<br>		{<br>			cout &lt;&lt; "Nhap diem hoc sinh " &lt;&lt; x + 1 &lt;&lt; " : ";<br>			cin &gt;&gt; diem[x];<br>		} while (diem[x] &lt; 0 || diem[x] &gt; 10);<br>	}</p>
+
+<pre><code>system("cls");
+cout &lt;&lt; "Diem cac hoc sinh trong lop:" &lt;&lt; endl;
+
+for (int x = 0; x &lt;= 9; x++)
+{
+	cout &lt;&lt; "Hoc sinh " &lt;&lt; x+1 &lt;&lt; ":" &lt;&lt; diem[x] &lt;&lt; endl;
+}
+for (x = 0; x &lt;= 9; x++)
+{
+	if (diemmax &lt;= diem[x])
+	{
+		diemmax = diem[x];
+		y = x;
+	}
+}
+cout &lt;&lt; "Diem so cao nhat la cua hoc sinh " &lt;&lt; y+1 &lt;&lt; ": " &lt;&lt; diemmax &lt;&lt; endl;
+system("pause");
+return 0;</code></pre>
+
+<p>}</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-179526">
+      <a title="March 30, 2017  3:35pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/30">Mar '17</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/kienonline19" target="_blank"><img src="./17546_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/kienonline19" target="_blank" class="">kienonline<wbr>​19</a>
+        </h3>
+        <p>Bài em sửa lại mọi người xem góp ý em với <img src="./slight_smile.png" title=":slight_smile:" class="emoji" alt=":slight_smile:"><br></p>
+
+<p></p><pre><code class="lang-auto">#include &lt;iostream&gt;
+#include &lt;limits.h&gt;
+
+using namespace std;
+
+int main(){
+
+	int n;
+	
+	do {
+	
+		cout&lt;&lt;"\n Hay nhap vao so luong phan tu: ";
+		cin&gt;&gt;n;
+
+	} while (n &lt; 1 || n &gt; INT_MAX);
+
+	double arr[n];
+	int i = 0;
+
+	while(true){
+
+		come_back:
+
+		cout&lt;&lt;" Nhap diem cua sinh vien thu "&lt;&lt;i + 1&lt;&lt;": ";
+		cin&gt;&gt;arr[i];
+
+		if(arr[i] &lt; 1 || arr[i] &gt; 10){
+
+			goto come_back;
+		}
+
+		++i;
+
+		if(i &gt;= n){
+
+			break;
+		}
+	}
+
+	int pos = 0;
+
+	for (int i = 1; i &lt; n; ++i) {
+		
+		if(arr[pos] &lt; arr[i]){
+
+			pos = i;
+		}
+	}
+
+	cout&lt;&lt;"\n Sinh vien co diem cao nhat: "&lt;&lt;arr[pos]&lt;&lt;" o vi tri thu "&lt;&lt;pos + 1&lt;&lt;endl;
+
+	return 0;
+}</code></pre>
+
+            <a data-link-to-post="196349" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/30" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-196349">
+      <a title="June 24, 2017 10:02pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/31">Jun '17</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Dark.Hades" target="_blank"><img src="./25332_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Dark.Hades" target="_blank" class="">Dark.<wbr>​<wbr>​Hades</a>
+        </h3>
+        <aside class="quote" data-post="30" data-topic="30080"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./17546_1(1).png" class="avatar">kienonline19:</div>
+<blockquote><p>int32_t idx = 0;</p></blockquote></aside>
+
+<p>Dòng này chỉ cần khai báo là đủ, không cần gán giá trị<br></p>
+
+<aside class="quote" data-post="30" data-topic="30080"><div class="title">
+<div class="quote-controls"></div>
+<img alt="" width="20" height="20" src="./17546_1(1).png" class="avatar">kienonline19:</div>
+<blockquote><p>maxLocation + 1</p></blockquote></aside>
+
+<p>Dòng này nên cho ngoặc đơn <strong>()</strong></p>
+
+      </div>
+    </article>
+    <article class="post" id="post-204218">
+      <a title="July 22, 2017  3:20am" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/32">Jul '17</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/Rhen_Su" target="_blank"><img src="./23929_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/Rhen_Su" target="_blank" class="">Rhen_<wbr>​<wbr>​Su</a>
+        </h3>
+        <p>bai cua em moi lam: </p>
+
+<h1>include </h1>
+
+<h1>include </h1>
+
+<p>int main()<br>{<br>	int32_t student[31];<br>	int32_t max = INT32_MIN;<br>	int16_t number_of_student;</p>
+
+<pre><code>for (int32_t index = 1; index &lt;= 30; index++)
+{
+	std::cout &lt;&lt; "Enter a grade for student " &lt;&lt; index &lt;&lt; ": ";
+	std::cin &gt;&gt; student[index];
+	
+	if (student[index] &gt;= max)
+	{
+		max = student[index];
+		number_of_student = index;
+	}
+}
+
+std::cout &lt;&lt; "The highest grade is " &lt;&lt; max &lt;&lt; " of student number " &lt;&lt; number_of_student &lt;&lt; std::endl;
+
+system("pause");
+return 0;</code></pre>
+
+<p>}</p>
+
+            <a data-link-to-post="206417" class="post-replies button" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/32" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-206417">
+      <a title="July 27, 2017  4:13pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/33">Jul '17</a>
+        <a data-link-to-post="204218" class="in-reply-to" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/32">▶ Rhen_Su</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/kienonline19" target="_blank"><img src="./17546_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/kienonline19" target="_blank" class="">kienonline<wbr>​19</a>
+        </h3>
+        <p>bạn format lại source code đi nha<br>thêm ba dấu ba chấm ở đầu và cuối mã nguồn là được</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-207770">
+      <a title="July 31, 2017  3:28pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/34">Jul '17</a>
+        <a data-link-to-post="136035" class="in-reply-to" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/19">▶ tntxtnt</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/kienonline19" target="_blank"><img src="./17546_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/kienonline19" target="_blank" class="">kienonline<wbr>​19</a>
+        </h3>
+        <p>Em nghĩ làm như thế này ổn hơn vì không xái mảng phụ để lưu trữ <img src="./slight_smile.png" title=":slight_smile:" class="emoji" alt=":slight_smile:"><br></p>
+
+<p></p><pre><code class="lang-auto">// Array practice
+
+#include &lt;iostream&gt;
+
+using namespace std;
+
+#define MAX_SIZE 10
+
+int main() {
+
+	double Mark[MAX_SIZE];
+	double Max = 0.0;
+
+	for (int i = 0; i &lt; MAX_SIZE; ++i) {
+
+		do {
+
+			cout &lt;&lt; " Enter student_mark[" &lt;&lt; i &lt;&lt; "] == ";
+			cin &gt;&gt; Mark[i];
+
+		} while (Mark[i] &lt; 0 || Mark[i] &gt; 10);
+
+		if (Max &lt; Mark[i]) {
+
+			Max = Mark[i];
+		}
+	}
+
+	for (int i = 0; i &lt; MAX_SIZE; ++i) {
+
+		if (Max == Mark[i]) {
+
+			cout &lt;&lt; " Pos == " &lt;&lt; i &lt;&lt; endl;
+		}
+	}
+
+	system("pause");
+	return 0;
+}</code></pre>
+
+      </div>
+    </article>
+    <article class="post" id="post-227465">
+      <a title="October 10, 2017  2:26pm" class="post-date" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/35">Oct '17</a>
+
+      <div class="author">
+        <a href="https://daynhauhoc.com/u/wind_nn_1412" target="_blank"><img src="./45(6).png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://daynhauhoc.com/u/wind_nn_1412" target="_blank" class="">wind_<wbr>​nn_<wbr>​1412</a>
+        </h3>
+        <p>Mình có một thắc mắc nhỏ là ở ví dụ mảng, phần tử cuối cùng là '\0'. Phần tử nảy có vai trò như thế nào nhỉ??</p>
+
+      </div>
+    </article>
+
+    <footer class="clearfix">
+      <a target="_blank" href="https://daynhauhoc.com/"><img class="logo" src="./1676518e1562184254d70059153672fd4afca30c596.png" alt="1676518e1562184254d70059153672fd4afca30c596"></a>
+      <a class="button" target="_blank" href="https://daynhauhoc.com/t/mang-mot-chieu-c-c/30080/35">Continue Discussion</a>
+    </footer>
+    <div class="clearfix"></div>
+
+
+  
+
+</body></html>
