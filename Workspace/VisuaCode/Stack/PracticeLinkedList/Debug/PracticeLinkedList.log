@@ -1,5 +1,0 @@
-﻿  main.cpp
-e:\codeblock\visuacode\stack\practicelinkedlist\main.cpp(42): error C2143: syntax error: missing ';' before '}'
-e:\codeblock\visuacode\stack\practicelinkedlist\main.cpp(46): error C2228: left of '.next' must have class/struct/union
-  e:\codeblock\visuacode\stack\practicelinkedlist\main.cpp(46): note: type is 'Node *'
-  e:\codeblock\visuacode\stack\practicelinkedlist\main.cpp(46): note: did you intend to use '->' instead?
