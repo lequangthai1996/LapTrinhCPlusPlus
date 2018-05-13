@@ -1,0 +1,7 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppClean.targets(76,5): warning : Access to the path 'e:\codeblock\visuacode\stack\debug\stack.exe' is denied.
+  STACK.cpp
+  NOTE.cpp
+  main.cpp
+  Generating Code...
+e:\codeblock\baithuchanh\stack\stack.cpp(63): warning C4715: 'STACK::pop': not all control paths return a value
+LINK : fatal error LNK1104: cannot open file 'E:\CodeBlock\VisuaCode\Stack\Debug\Stack.exe'

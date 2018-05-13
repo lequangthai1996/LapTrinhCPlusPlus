@@ -1,0 +1,19 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppClean.targets(76,5): warning : Access to the path 'e:\codeblock\visuacode\luyentap\debug\luyentap.exe' is denied.
+  Time.cpp
+  thisPoint.cpp
+  staticKey.cpp
+  SaoChepObject.cpp
+  Sale.cpp
+  returnRef.cpp
+  main.cpp
+  linkfunction.cpp
+  fiendCount.cpp
+  fibo.cpp
+  Count.cpp
+  EmployeeDemo.cpp
+  Destructor.cpp
+  cstringexam.cpp
+  constObject.cpp
+  constField.cpp
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'E:\CodeBlock\VisuaCode\luyentap\Debug\luyentap.exe'
