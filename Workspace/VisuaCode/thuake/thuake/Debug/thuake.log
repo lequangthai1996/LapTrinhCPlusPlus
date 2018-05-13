@@ -1,0 +1,6 @@
+﻿  virtualExam.cpp
+  demoCircle.cpp
+e:\codeblock\visuacode\thuake\thuake\democircle.cpp(5): warning C4305: 'argument': truncation from 'double' to 'float'
+  Generating Code...
+  thuake.vcxproj -> E:\CodeBlock\VisuaCode\thuake\Debug\thuake.exe
+  thuake.vcxproj -> E:\CodeBlock\VisuaCode\thuake\Debug\thuake.pdb (Partial PDB)

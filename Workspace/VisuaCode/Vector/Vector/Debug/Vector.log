@@ -1,0 +1,9 @@
+﻿  demo.cpp
+  Vector.cpp
+  Generating Code...
+e:\codeblock\visuacode\vector\vector\vector.cpp(66): warning C4715: 'operator*': not all control paths return a value
+e:\codeblock\visuacode\vector\vector\vector.cpp(54): warning C4715: 'operator-': not all control paths return a value
+e:\codeblock\visuacode\vector\vector\vector.cpp(42): warning C4715: 'VECTOR::operator+': not all control paths return a value
+e:\codeblock\visuacode\vector\vector\vector.cpp(82): warning C4715: 'VECTOR::operator^': not all control paths return a value
+  Vector.vcxproj -> E:\CodeBlock\VisuaCode\Vector\Debug\Vector.exe
+  Vector.vcxproj -> E:\CodeBlock\VisuaCode\Vector\Debug\Vector.pdb (Partial PDB)

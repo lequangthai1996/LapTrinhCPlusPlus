@@ -1,0 +1,35 @@
+var b_txt = '';
+
+// Write a warning for the developer
+b_txt+= '<!-- DEVELOPER WARNING: The Flickr badge code is likely to be deprecated, and we recommend changing to a new method to embed photo as soon as possible.  See https://www.flickr.com/api for information on how to access Flickr data. Thanks. -->';
+
+// write the badge
+	
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image1"><a href="https://www.flickr.com/photos/ipctech/16733464863/"><img src="https://farm8.staticflickr.com/7669/16733464863_75e16cb0a1_s.jpg" alt="Ảnh trên Flickr" title="11040852_840970539273031_6822113625651648945_n" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image2"><a href="https://www.flickr.com/photos/ipctech/16954364960/"><img src="https://farm8.staticflickr.com/7646/16954364960_aac3b171ef_s.jpg" alt="Ảnh trên Flickr" title="Aaron\'s Animals - Facebook" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image3"><a href="https://www.flickr.com/photos/ipctech/16954089238/"><img src="https://farm9.staticflickr.com/8686/16954089238_07dd753f88_s.jpg" alt="Ảnh trên Flickr" title="dong-luc-4" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image4"><a href="https://www.flickr.com/photos/ipctech/17040648186/"><img src="https://farm8.staticflickr.com/7669/17040648186_d9592efd77_s.jpg" alt="Ảnh trên Flickr" title="11096696_840059296030822_4638174017959953654_n" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image5"><a href="https://www.flickr.com/photos/ipctech/16397380744/"><img src="https://farm9.staticflickr.com/8695/16397380744_c6724a2e67_s.jpg" alt="Ảnh trên Flickr" title="ShopGame.Net-anh-hai-huoc-troll-211" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image6"><a href="https://www.flickr.com/photos/ipctech/16812403927/"><img src="https://farm8.staticflickr.com/7651/16812403927_12ae60224f_s.jpg" alt="Ảnh trên Flickr" title="hinh-binh-luan-facebook-1" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image7"><a href="https://www.flickr.com/photos/ipctech/16812403917/"><img src="https://farm8.staticflickr.com/7592/16812403917_11773f3f04_s.jpg" alt="Ảnh trên Flickr" title="facebook_doi_bieu_tuong_nut_like_va_share_ngon_tay_cai_noi_tieng_da_khong_con_1" height="75" width="75"></a></div>';
+	
+		 	 		
+	b_txt+= '<div class="flickr_badge_image" id="flickr_badge_image8"><a href="https://www.flickr.com/photos/ipctech/16832035658/"><img src="https://farm9.staticflickr.com/8723/16832035658_8d3b8d8dc0_s.jpg" alt="Ảnh trên Flickr" title="diendanbaclieu-119428-meo-bat-nat-nhau" height="75" width="75"></a></div>';
+
+b_txt += '<span style="position:absolute;left:-999em;top:-999em;visibility:hidden" class="flickr_badge_beacon"><img src="https://geo.yahoo.com/p?s=792600102&t=4e91000bead198f318c276dbfbe55430&r=http%3A%2F%2Fxuanhungcntt.blogspot.com%2F2016%2F03%2Fmot-so-thuat-toan-sap-xep-thong-dung.html&fl_ev=0&lang=vn&intl=sg" width="0" height="0" alt="" /></span>';
+
+document.write(b_txt);

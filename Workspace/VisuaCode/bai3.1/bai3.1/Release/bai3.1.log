@@ -1,0 +1,11 @@
+﻿  Class.cpp
+  main.cpp
+  Person.cpp
+  point_to_pointer.cpp
+  Student.cpp
+  Teacher.cpp
+  Generating code
+  All 31 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  bai3.1.vcxproj -> E:\CodeBlock\VisuaCode\bai3.1\Release\bai3.1.exe
+  bai3.1.vcxproj -> E:\CodeBlock\VisuaCode\bai3.1\Release\bai3.1.pdb (Full PDB)

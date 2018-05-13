@@ -1,0 +1,10 @@
+﻿  demo.cpp
+demo.obj : error LNK2019: unresolved external symbol "public: __thiscall VECTOR::VECTOR(int)" (??0VECTOR@@QAE@H@Z) referenced in function _main
+demo.obj : error LNK2019: unresolved external symbol "public: virtual __thiscall VECTOR::~VECTOR(void)" (??1VECTOR@@UAE@XZ) referenced in function _main
+demo.obj : error LNK2019: unresolved external symbol "public: class VECTOR __thiscall VECTOR::operator+(class VECTOR const &)" (??HVECTOR@@QAE?AV0@ABV0@@Z) referenced in function _main
+demo.obj : error LNK2019: unresolved external symbol "class VECTOR __cdecl operator-(class VECTOR const &,class VECTOR const &)" (??G@YA?AVVECTOR@@ABV0@0@Z) referenced in function _main
+demo.obj : error LNK2019: unresolved external symbol "double __cdecl operator*(class VECTOR const &,class VECTOR const &)" (??D@YANABVVECTOR@@0@Z) referenced in function _main
+demo.obj : error LNK2019: unresolved external symbol "public: double __thiscall VECTOR::operator^(class VECTOR const &)" (??TVECTOR@@QAENABV0@@Z) referenced in function _main
+demo.obj : error LNK2019: unresolved external symbol "class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl operator<<(class std::basic_ostream<char,struct std::char_traits<char> > &,class VECTOR const &)" (??6@YAAAV?$basic_ostream@DU?$char_traits@D@std@@@std@@AAV01@ABVVECTOR@@@Z) referenced in function _main
+demo.obj : error LNK2019: unresolved external symbol "class std::basic_istream<char,struct std::char_traits<char> > & __cdecl operator>>(class std::basic_istream<char,struct std::char_traits<char> > &,class VECTOR &)" (??5@YAAAV?$basic_istream@DU?$char_traits@D@std@@@std@@AAV01@AAVVECTOR@@@Z) referenced in function _main
+E:\CodeBlock\VisuaCode\Project1\Debug\Project1.exe : fatal error LNK1120: 8 unresolved externals
